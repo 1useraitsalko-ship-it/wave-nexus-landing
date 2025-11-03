@@ -33,19 +33,17 @@ const HeroSection = () => {
           </div>
 
           {/* Правая колонка */}
-          <div className="animate-fade-in flex justify-center lg:justify-end">
-            <div className="w-full max-w-[420px]">
-              <GlassCard glow className="overflow-hidden">
-                <div className="aspect-[9/16] bg-gradient-to-br from-blue/20 to-violet/20 flex items-center justify-center">
-                  <div className="text-center space-y-4 p-8">
-                    <div className="w-20 h-20 mx-auto rounded-full bg-gradient-cta animate-glow flex items-center justify-center">
-                      <span className="text-3xl">▶</span>
-                    </div>
-                    <p className="text-muted">Превью видео</p>
+          <div className="animate-fade-in">
+            <GlassCard glow className="overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-blue/20 to-violet/20 flex items-center justify-center">
+                <div className="text-center space-y-4 p-8">
+                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-cta animate-glow flex items-center justify-center">
+                    <span className="text-3xl">▶</span>
                   </div>
+                  <p className="text-muted">Превью видео</p>
                 </div>
-              </GlassCard>
-            </div>
+              </div>
+            </GlassCard>
           </div>
         </div>
       </div>
