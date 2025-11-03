@@ -11,6 +11,12 @@ const AuthorSection = () => {
   return (
     <section className="py-20 bg-gradient-wave">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+          <span className="bg-gradient-text bg-clip-text text-transparent">
+            Кто я?
+          </span>
+        </h2>
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Левая колонка - статистика */}
           <div className="space-y-6">
