@@ -1,6 +1,7 @@
 import Badge from "../Badge";
 import PrimaryButton from "../PrimaryButton";
 import GlassCard from "../GlassCard";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const HeroSection = () => {
   return (
@@ -35,13 +36,15 @@ const HeroSection = () => {
           {/* Правая колонка */}
           <div className="animate-fade-in">
             <GlassCard glow className="overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-blue/20 to-violet/20 flex items-center justify-center">
-                <div className="text-center space-y-4 p-8">
-                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-cta animate-glow flex items-center justify-center">
-                    <span className="text-3xl">▶</span>
-                  </div>
-                  <p className="text-muted">Превью видео</p>
-                </div>
+              <div className="aspect-video bg-gradient-to-br from-blue/20 to-violet/20">
+                <video 
+                  src={heroVideo} 
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
               </div>
             </GlassCard>
           </div>
