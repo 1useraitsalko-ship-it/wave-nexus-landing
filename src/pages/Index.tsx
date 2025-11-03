@@ -11,11 +11,8 @@ import ModulesSection from "@/components/sections/ModulesSection";
 import PricingHero from "@/components/sections/PricingHero";
 import WhyNowSection from "@/components/sections/WhyNowSection";
 import FinalCTA from "@/components/sections/FinalCTA";
-import { useCustomCursor } from "@/hooks/useCustomCursor";
 
 const Index = () => {
-  useCustomCursor();
-  
   return (
     <div className="min-h-screen bg-[hsl(var(--bg))] text-foreground">
       <Header />
