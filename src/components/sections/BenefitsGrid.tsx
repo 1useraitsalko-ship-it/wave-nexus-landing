@@ -1,10 +1,12 @@
 import GlassCard from "../GlassCard";
+import bannedSocial from "@/assets/banned-social.png";
 
 const benefits = [
   {
     title: "Запрет на рекламу через соцсети",
     icon: "🚫",
-    type: "problem"
+    type: "problem",
+    image: bannedSocial
   },
   {
     title: "Баннерная слепота",
@@ -37,13 +39,21 @@ const BenefitsGrid = () => {
           {benefits.map((benefit, index) => (
             <GlassCard 
               key={index} 
-              className={`p-8 hover:shadow-[0_0_40px_hsl(var(--cyan)/0.2)] transition-shadow duration-300 ${
+              className={`aspect-square hover:shadow-[0_0_40px_hsl(var(--cyan)/0.2)] transition-shadow duration-300 ${
                 benefit.type === "solution" ? "border-cyan/30" : ""
               }`}
             >
-              <div className="flex items-start gap-4">
-                <span className="text-4xl">{benefit.icon}</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-foreground">
+              <div className="h-full flex flex-col items-center justify-center p-8 gap-6">
+                {benefit.image ? (
+                  <img 
+                    src={benefit.image} 
+                    alt={benefit.title}
+                    className="w-full h-auto max-h-[200px] object-contain rounded-lg"
+                  />
+                ) : (
+                  <span className="text-5xl">{benefit.icon}</span>
+                )}
+                <h3 className="text-xl md:text-2xl font-semibold text-foreground text-center">
                   {benefit.title}
                 </h3>
               </div>
