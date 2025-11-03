@@ -66,7 +66,7 @@ const PricingHero = () => {
               href="https://aitsalko.ru/2waves"
               className="w-full text-lg h-16"
             >
-              ВСТУПИТЬ СЕЙЧАС
+              Оплатить доступ
             </PrimaryButton>
           </GlassCard>
         </div>
