@@ -48,8 +48,8 @@
 
 @layer utilities {
   .animate-gradient-wave {
-    background-size: 200% 200%;
-    animation: gradient-wave 6s ease-in-out infinite;
+    background-size: 300% 300%;
+    animation: gradient-wave 4s ease-in-out infinite;
   }
   
   .animate-breathing {
@@ -59,7 +59,9 @@
 
 @keyframes gradient-wave {
   0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
   50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
   100% { background-position: 0% 50%; }
 }
 

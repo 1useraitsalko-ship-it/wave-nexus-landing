@@ -13,7 +13,7 @@ const HypeSection = () => {
         </div>
 
         <div className="pt-12">
-          <h3 className="text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-text bg-clip-text text-transparent animate-gradient-wave">
+          <h3 className="text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-blue-400 via-cyan via-teal-400 to-blue-500 bg-clip-text text-transparent animate-gradient-wave">
             СЕЙЧАС ВТОРАЯ ВОЛНА
           </h3>
         </div>
