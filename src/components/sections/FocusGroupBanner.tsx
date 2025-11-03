@@ -8,14 +8,11 @@ const FocusGroupBanner = () => {
         <GlassCard glow className="p-8 md:p-12">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Фокус-группа стартует:{" "}
-              <span className="bg-gradient-text bg-clip-text text-transparent">
-                18 ноября в 19:00 МСК
-              </span>
+              Набор в фокус группу для создания виральных видео
             </h2>
             
             <p className="text-xl text-muted">
-              Продлится до 28 ноября включительно
+              Настрой алгоритмы соцсети, научись создавать виральные Reels, получай новых подписчиков и клиентов
             </p>
 
             <div className="flex flex-wrap gap-3 pt-4">
