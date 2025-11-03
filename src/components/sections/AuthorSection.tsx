@@ -11,11 +11,11 @@ const AuthorSection = () => {
   return (
     <section className="py-20 bg-gradient-wave">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-16 items-start">
           {/* Левая колонка - имя и статистика */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                 Николай Цалко
               </h2>
               <p className="text-lg md:text-xl text-[hsl(var(--cyan))]">
@@ -23,13 +23,13 @@ const AuthorSection = () => {
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-10">
               {stats.map((stat, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="text-4xl md:text-5xl font-bold">
+                <div key={index} className="space-y-1">
+                  <div className="text-5xl md:text-6xl font-bold">
                     {stat.value}
                   </div>
-                  <div className="text-base md:text-lg text-muted">
+                  <div className="text-base md:text-lg text-muted max-w-md">
                     {stat.label}
                   </div>
                 </div>
@@ -38,7 +38,7 @@ const AuthorSection = () => {
           </div>
 
           {/* Правая колонка - фото */}
-          <div className="rounded-[24px] overflow-hidden border border-[hsl(var(--stroke))] shadow-[0_0_40px_hsl(var(--cyan)/0.15)]">
+          <div className="rounded-[32px] overflow-hidden border-2 border-[hsl(var(--cyan)/0.3)] shadow-[0_0_60px_hsl(var(--cyan)/0.2)] w-full lg:w-[420px] xl:w-[480px]">
             <img
               src={authorPhoto}
               alt="Николай Цалко"
