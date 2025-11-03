@@ -1,11 +1,10 @@
 import GlassCard from "../GlassCard";
-import PrimaryButton from "../PrimaryButton";
 
 const modules = [
   {
     number: "0",
     emoji: "🎬",
-    title: "Вводный урок",
+    title: "Добавление в закрытый чат. Вводный урок",
     subtitle: "Что можно делать с виральным контентом и как на нем зарабатывать?",
     items: [],
   },
@@ -92,13 +91,6 @@ const ModulesSection = () => {
               </div>
             </GlassCard>
           ))}
-        </div>
-
-        {/* Кнопка */}
-        <div className="flex justify-center mt-12">
-          <PrimaryButton className="text-base md:text-lg px-8 py-4">
-            ВТОРАЯ ВОЛНА НЕЙРОКОНТЕНТА
-          </PrimaryButton>
         </div>
       </div>
     </section>
