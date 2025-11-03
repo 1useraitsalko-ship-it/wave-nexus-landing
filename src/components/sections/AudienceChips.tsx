@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { cn } from "@/lib/utils";
+import GlassCard from "../GlassCard";
 
 const audiences = [
   { emoji: "🎓", label: "Эксперт" },
@@ -10,7 +10,6 @@ const audiences = [
 ];
 
 const AudienceChips = () => {
-  const [active, setActive] = useState(0);
 
   return (
     <section className="py-20">
@@ -21,25 +20,19 @@ const AudienceChips = () => {
           </span>
         </h2>
         
-        <div className="flex flex-wrap gap-6 justify-center">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
           {audiences.map((audience, index) => (
-            <button
+            <GlassCard
               key={index}
-              onClick={() => setActive(index)}
-              className={cn(
-                "px-10 py-6 rounded-[24px] border backdrop-blur-sm transition-all duration-300",
-                "flex items-center gap-4 text-xl md:text-2xl font-bold",
-                "hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--cyan)/0.3)]",
-                active === index
-                  ? "border-cyan bg-gradient-to-br from-cyan/20 to-cyan/5 shadow-[0_0_40px_hsl(var(--cyan)/0.5)] scale-105"
-                  : "border-[hsl(var(--stroke))] bg-[hsl(var(--bg-card))] hover:border-cyan/50"
-              )}
+              className="aspect-square hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--cyan)/0.3)] transition-all duration-300"
             >
-              <span className="text-3xl">{audience.emoji}</span>
-              <span className={cn(
-                active === index && "bg-gradient-text bg-clip-text text-transparent"
-              )}>{audience.label}</span>
-            </button>
+              <div className="h-full flex flex-col items-center justify-center gap-4 p-4">
+                <span className="text-4xl md:text-5xl">{audience.emoji}</span>
+                <span className="text-base md:text-lg font-bold text-center bg-gradient-text bg-clip-text text-transparent">
+                  {audience.label}
+                </span>
+              </div>
+            </GlassCard>
           ))}
         </div>
       </div>
