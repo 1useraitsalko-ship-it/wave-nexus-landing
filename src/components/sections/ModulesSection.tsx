@@ -1,89 +1,104 @@
-import { useState } from "react";
 import GlassCard from "../GlassCard";
-import Badge from "../Badge";
-import { ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
+import PrimaryButton from "../PrimaryButton";
 
 const modules = [
   {
     number: "0",
+    emoji: "🎬",
     title: "Вводный урок",
-    items: ["Обзор программы", "Настройка инструментов", "Первые шаги"],
+    subtitle: "Что можно делать с виральным контентом и как на нем зарабатывать?",
+    items: [],
   },
   {
     number: "1",
-    title: "Структура виральных видео и психология вовлечения",
-    items: ["Анатомия вирусного контента", "Триггеры вовлечения", "Формулы удержания внимания"],
+    emoji: "🔥",
+    title: "Структура виральных видео. Прокачка алгоритмов соцсетей",
+    subtitle: "",
+    items: ["Из чего состоят виральные видео", "Как строятся алгоритмы", "Какую тему выбрать?"],
   },
   {
     number: "2",
-    title: "Виральные сценарии и промпты для Sora",
-    items: ["Шаблоны сценариев", "Оптимизация промптов", "Генерация идей"],
+    emoji: "✍️",
+    title: "Виральные сценарии. Как их составлять. Возможность автоматизации написания сценариев",
+    subtitle: "",
+    items: ["Как писать правильные сценарии", "Как автоматизировать написание контента"],
   },
   {
     number: "3",
-    title: "Sora. Подготовка. Доступ. Генерация. Редактирование",
-    items: ["Получение доступа", "Интерфейс Sora", "Настройки генерации", "Базовое редактирование"],
+    emoji: "🎬",
+    title: "Sora. Подготовка к созданию",
+    subtitle: "",
+    items: ["Как создавать видео", "Безлимитная Sora", "Работа с iPhone и PC", "Создание Cameo"],
   },
   {
     number: "4",
+    emoji: "🎥",
     title: "Генерация видео. Удаление Watermark",
-    items: ["Финальная обработка", "Удаление водяных знаков", "Экспорт и оптимизация"],
+    subtitle: "",
+    items: ["Создание видео по сценарию", "Правки ролика", "Создание ролика с определенным персонажем", "Удаление водного знака"],
   },
 ];
 
 const ModulesSection = () => {
-  const [openModule, setOpenModule] = useState<number | null>(0);
-
   return (
-    <section className="py-20">
+    <section className="py-20 bg-gradient-wave">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
-          5 подробных модулей
+        {/* Заголовок */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#FF8C42]">
+          — 5 подробных модулей —
         </h2>
 
-        <div className="space-y-4">
+        {/* Модули */}
+        <div className="space-y-6">
           {modules.map((module, index) => (
             <GlassCard
               key={index}
-              className="overflow-hidden hover:shadow-[0_0_40px_hsl(var(--cyan)/0.15)] transition-all duration-300"
+              className="p-6 md:p-8 hover:shadow-[0_0_40px_hsl(var(--cyan)/0.2)] transition-all duration-300"
             >
-              <button
-                onClick={() => setOpenModule(openModule === index ? null : index)}
-                className="w-full p-6 md:p-8 flex items-start gap-6 text-left"
-              >
-                <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-cta flex items-center justify-center text-2xl font-bold">
-                  {module.number}
-                </div>
-                
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-4">
-                    {module.title}
-                  </h3>
-                  
-                  <div
-                    className={cn(
-                      "overflow-hidden transition-all duration-300",
-                      openModule === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    )}
-                  >
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {module.items.map((item, i) => (
-                        <Badge key={i}>{item}</Badge>
-                      ))}
-                    </div>
-                  </div>
+              <div className="flex items-start gap-6">
+                {/* Номер в круге */}
+                <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-[hsl(var(--cyan)/0.3)] to-[hsl(var(--blue)/0.3)] border-2 border-[hsl(var(--cyan)/0.4)] flex items-center justify-center shadow-[0_0_30px_hsl(var(--cyan)/0.3)]">
+                  <span className="text-3xl md:text-4xl font-bold">{module.number}</span>
                 </div>
 
-                <ChevronDown
-                  className={cn(
-                    "flex-shrink-0 w-6 h-6 text-cyan transition-transform duration-300",
-                    openModule === index && "rotate-180"
+                {/* Контент */}
+                <div className="flex-1 space-y-4">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-semibold text-foreground flex items-center gap-3">
+                      <span className="text-2xl">{module.emoji}</span>
+                      {module.title}
+                    </h3>
+                    {module.subtitle && (
+                      <p className="text-base md:text-lg text-muted mt-2 italic">
+                        {module.subtitle}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Теги */}
+                  {module.items.length > 0 && (
+                    <div className="flex flex-wrap gap-3">
+                      {module.items.map((item, i) => (
+                        <span
+                          key={i}
+                          className="px-4 py-2 rounded-lg bg-[hsl(var(--cyan)/0.1)] border border-[hsl(var(--cyan)/0.3)] text-[hsl(var(--cyan))] text-sm md:text-base hover:bg-[hsl(var(--cyan)/0.15)] transition-colors"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   )}
-                />
-              </button>
+                </div>
+              </div>
             </GlassCard>
           ))}
+        </div>
+
+        {/* Кнопка */}
+        <div className="flex justify-center mt-12">
+          <PrimaryButton className="text-base md:text-lg px-8 py-4">
+            ВТОРАЯ ВОЛНА НЕЙРОКОНТЕНТА
+          </PrimaryButton>
         </div>
       </div>
     </section>
