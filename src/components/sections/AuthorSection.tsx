@@ -1,41 +1,50 @@
-import GlassCard from "../GlassCard";
+import authorPhoto from "@/assets/author-photo.jpeg";
 
 const stats = [
-  { value: "1000+", label: "Учеников прошли обучение" },
-  { value: "5 лет", label: "Опыта в создании контента" },
-  { value: "6 лет", label: "В digital-маркетинге" },
-  { value: "800+", label: "Успешных проектов" },
+  { value: "1000+", label: "коммерческих видео реализовано" },
+  { value: "5 лет", label: "в видеопроизводстве" },
+  { value: "6 лет", label: "в продвижении брендов" },
+  { value: "800+", label: "учеников офлайн и онлайн в школе \"Деньги на нейросетях\"" },
 ];
 
 const AuthorSection = () => {
   return (
     <section className="py-20 bg-gradient-wave">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="bg-gradient-text bg-clip-text text-transparent">
-            Кто я?
-          </span>
-        </h2>
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Левая колонка - имя и статистика */}
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Николай Цалко
+              </h2>
+              <p className="text-lg md:text-xl text-[hsl(var(--cyan))]">
+                AI Агентство РОСФОКУС
+              </p>
+            </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Левая колонка - статистика */}
-          <div className="space-y-6">
-            {stats.map((stat, index) => (
-              <GlassCard key={index} className="p-6">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-text bg-clip-text text-transparent mb-2">
-                  {stat.value}
+            <div className="space-y-6">
+              {stats.map((stat, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="text-4xl md:text-5xl font-bold">
+                    {stat.value}
+                  </div>
+                  <div className="text-base md:text-lg text-muted">
+                    {stat.label}
+                  </div>
                 </div>
-                <div className="text-lg text-muted">{stat.label}</div>
-              </GlassCard>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Правая колонка - фото */}
-          <GlassCard glow className="overflow-hidden aspect-square">
-            <div className="w-full h-full bg-gradient-to-br from-blue/20 via-cyan/20 to-violet/20 flex items-center justify-center">
-              <div className="text-8xl">👨‍💼</div>
-            </div>
-          </GlassCard>
+          <div className="rounded-[24px] overflow-hidden border border-[hsl(var(--stroke))] shadow-[0_0_40px_hsl(var(--cyan)/0.15)]">
+            <img
+              src={authorPhoto}
+              alt="Николай Цалко"
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
