@@ -44,6 +44,14 @@ const HeroSection = () => {
                   loop
                   muted
                   playsInline
+                  preload="auto"
+                  disablePictureInPicture
+                  onLoadedMetadata={(e) => {
+                    const video = e.currentTarget;
+                    video.play().catch(() => {
+                      // Автовоспроизведение заблокировано браузером
+                    });
+                  }}
                 />
               </div>
             </GlassCard>
