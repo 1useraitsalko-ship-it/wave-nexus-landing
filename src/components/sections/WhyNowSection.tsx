@@ -25,10 +25,14 @@ const reasons = [
 
 const WhyNowSection = () => {
   return (
-    <section className="py-20">
-      <div className="max-w-[1240px] mx-auto px-6 md:px-8">
-        <div className="flex items-center gap-3 justify-center mb-16">
-          <span className="text-4xl">⚡</span>
+    <section className="relative py-20 overflow-hidden">
+      {/* Фоновые градиенты для атмосферы */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-cyan/20 via-blue/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-violet/20 via-blue/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse" style={{ animationDelay: '1s' }}></div>
+      
+      <div className="relative max-w-[1240px] mx-auto px-6 md:px-8">
+        <div className="flex items-center gap-3 justify-center mb-16 animate-fade-in">
+          <span className="text-5xl animate-pulse">⚡</span>
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="bg-gradient-text bg-clip-text text-transparent">
               ПОЧЕМУ СЕЙЧАС?
@@ -36,24 +40,42 @@ const WhyNowSection = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {reasons.map((reason, index) => (
-            <GlassCard
+            <div
               key={index}
-              className="p-8 hover:shadow-[0_0_50px_hsl(var(--blue)/0.3)] transition-all duration-300"
+              className="group animate-fade-in"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-blue/30 to-violet/30 flex items-center justify-center text-3xl">
-                  {reason.emoji}
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
-                    {reason.title}
-                  </h3>
-                  <p className="text-muted">{reason.description}</p>
-                </div>
+              <div className="relative">
+                {/* Светящийся эффект при наведении */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan via-blue to-violet rounded-[26px] opacity-0 group-hover:opacity-30 blur-lg transition-all duration-500"></div>
+                
+                <GlassCard
+                  className="relative p-8 hover:scale-[1.02] transition-all duration-300 hover:shadow-[0_0_60px_hsl(var(--blue)/0.4)]"
+                >
+                  <div className="flex items-start gap-5">
+                    {/* Иконка с градиентом */}
+                    <div className="relative flex-shrink-0">
+                      <div className="absolute inset-0 bg-gradient-to-br from-cyan to-blue rounded-2xl blur-md opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan/30 via-blue/30 to-violet/30 flex items-center justify-center text-4xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        {reason.emoji}
+                      </div>
+                    </div>
+                    
+                    {/* Контент */}
+                    <div className="flex-1 space-y-3">
+                      <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent group-hover:from-cyan group-hover:to-blue transition-all duration-300">
+                        {reason.title}
+                      </h3>
+                      <p className="text-base leading-relaxed text-muted/90 group-hover:text-muted transition-colors duration-300">
+                        {reason.description}
+                      </p>
+                    </div>
+                  </div>
+                </GlassCard>
               </div>
-            </GlassCard>
+            </div>
           ))}
         </div>
       </div>
