@@ -1,5 +1,8 @@
 import GlassCard from "../GlassCard";
 import bannedSocial from "@/assets/banned-social.png";
+import fastGrowth from "@/assets/fast-growth.png";
+import bannerBlindness from "@/assets/banner-blindness.png";
+import newClients from "@/assets/new-clients.png";
 
 const benefits = [
   {
@@ -11,17 +14,20 @@ const benefits = [
   {
     title: "Баннерная слепота",
     icon: "👁️",
-    type: "problem"
+    type: "problem",
+    image: bannerBlindness
   },
   {
     title: "Быстрый набор подписчиков",
     icon: "📈",
-    type: "solution"
+    type: "solution",
+    image: fastGrowth
   },
   {
     title: "Новые клиенты",
     icon: "💰",
-    type: "solution"
+    type: "solution",
+    image: newClients
   },
 ];
 
@@ -39,23 +45,24 @@ const BenefitsGrid = () => {
           {benefits.map((benefit, index) => (
             <GlassCard 
               key={index} 
-              className={`aspect-square hover:shadow-[0_0_40px_hsl(var(--cyan)/0.2)] transition-shadow duration-300 ${
+              className={`relative overflow-hidden hover:scale-[1.02] hover:shadow-[0_0_40px_hsl(var(--cyan)/0.2)] transition-all duration-300 ${
                 benefit.type === "solution" ? "border-cyan/30" : ""
               }`}
             >
-              <div className="h-full flex flex-col items-center justify-center p-8 gap-6">
-                {benefit.image ? (
+              <div className="flex flex-col h-full">
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <img 
                     src={benefit.image} 
                     alt={benefit.title}
-                    className="w-full h-auto max-h-[200px] object-contain rounded-lg"
+                    className="w-full h-full object-cover"
                   />
-                ) : (
-                  <span className="text-5xl">{benefit.icon}</span>
-                )}
-                <h3 className="text-xl md:text-2xl font-semibold text-foreground text-center">
-                  {benefit.title}
-                </h3>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--bg-card))] via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div className="p-6 flex-1 flex items-center justify-center">
+                  <h3 className="text-lg md:text-xl font-semibold text-foreground text-center leading-tight">
+                    {benefit.title}
+                  </h3>
+                </div>
               </div>
             </GlassCard>
           ))}
