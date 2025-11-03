@@ -7,27 +7,22 @@ import video5 from "@/assets/video-5.mp4";
 
 const learnings = [
   {
-    emoji: "✨",
     title: "Создавать контент, который выделяется из толпы",
     video: video1,
   },
   {
-    emoji: "🔥",
-    title: "Прокачивать алгоритмы аккаунтов для вирального контента",
+    title: "Прокачивать алгоритмы для вирального контента",
     video: video2,
   },
   {
-    emoji: "🚀",
     title: "Быстро набирать подписчиков",
     video: video3,
   },
   {
-    emoji: "💰",
     title: "Переливать трафик в Telegram",
     video: video4,
   },
   {
-    emoji: "🐝",
     title: "Монетизировать контент",
     video: video5,
   },
@@ -47,21 +42,18 @@ const WhatYouLearn = () => {
           {learnings.map((item, index) => (
             <GlassCard 
               key={index}
-              className="group p-6 md:p-8 hover:shadow-[0_0_40px_hsl(var(--cyan)/0.3)] transition-all duration-500 overflow-hidden relative"
+              className="group h-48 hover:shadow-[0_0_40px_hsl(var(--cyan)/0.3)] transition-all duration-500 overflow-hidden relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan/0 via-cyan/10 to-cyan/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out pointer-events-none" />
               
-              <div className="flex items-start justify-between gap-6 relative z-10">
-                <div className="flex items-start gap-4 flex-1">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-cta flex items-center justify-center text-2xl">
-                    {item.emoji}
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-foreground pt-2">
+              <div className="flex items-center h-full gap-6 relative z-10 p-6">
+                <div className="flex items-center flex-1">
+                  <h3 className="text-lg md:text-2xl font-semibold text-foreground">
                     {item.title}
                   </h3>
                 </div>
                 
-                <div className="flex-shrink-0 w-32 h-56 md:w-40 md:h-72 rounded-2xl overflow-hidden bg-muted/30">
+                <div className="flex-shrink-0 w-32 md:w-40 h-full rounded-xl overflow-hidden bg-muted/30">
                   <video 
                     src={item.video}
                     className="w-full h-full object-cover"
