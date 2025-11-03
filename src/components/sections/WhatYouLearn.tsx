@@ -27,7 +27,7 @@ const learnings = [
     video: video4,
   },
   {
-    emoji: "🐝",
+    emoji: "🪙",
     title: "Монетизировать контент",
     video: video5,
   },
