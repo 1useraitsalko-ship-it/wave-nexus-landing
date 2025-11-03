@@ -40,7 +40,7 @@ const modules = [
 
 const ModulesSection = () => {
   return (
-    <section className="py-20 bg-gradient-wave">
+    <section id="modules" className="py-20 bg-gradient-wave">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
         {/* Заголовок */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#FF8C42]">

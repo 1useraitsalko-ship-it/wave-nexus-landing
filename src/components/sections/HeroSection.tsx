@@ -27,7 +27,7 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            <PrimaryButton href="https://aitsalko.ru/2waves" className="text-lg h-16 px-9">
+            <PrimaryButton href="#modules" className="text-lg h-16 px-9">
               🌊 Поймать волну возможностей
             </PrimaryButton>
           </div>
