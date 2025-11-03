@@ -8,7 +8,7 @@ const FocusGroupBanner = () => {
         <GlassCard glow className="p-8 md:p-12">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Набор в фокус группу для создания виральных видео
+              <span className="text-blue">Набор в фокус-группу</span> для создания виральных видео
             </h2>
             
             <p className="text-xl text-muted">
