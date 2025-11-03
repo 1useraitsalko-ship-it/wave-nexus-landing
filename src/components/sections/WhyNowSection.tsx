@@ -65,7 +65,7 @@ const WhyNowSection = () => {
                     
                     {/* Контент */}
                     <div className="flex-1 space-y-3">
-                      <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent group-hover:from-cyan group-hover:to-blue transition-all duration-300">
+                      <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-300 bg-clip-text text-transparent group-hover:from-yellow-300 group-hover:via-amber-300 group-hover:to-yellow-200 transition-all duration-300 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">
                         {reason.title}
                       </h3>
                       <p className="text-base leading-relaxed text-muted/90 group-hover:text-muted transition-colors duration-300">
