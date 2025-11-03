@@ -12,7 +12,7 @@ const HeroSection = () => {
           <div className="space-y-8 animate-slide-up">
             <Badge>ВТОРАЯ ВОЛНА НЕЙРОКОНТЕНТА</Badge>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15] text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-foreground">
               Научись создавать{" "}
               <span className="bg-gradient-text bg-clip-text text-transparent">
                 вирусные ролики
