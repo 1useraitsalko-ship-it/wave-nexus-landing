@@ -55,7 +55,7 @@ const AuthorSection = () => {
           </div>
 
           {/* Правая колонка - фото */}
-          <div className="rounded-[32px] overflow-hidden border-2 border-[hsl(var(--cyan)/0.3)] shadow-[0_0_60px_hsl(var(--cyan)/0.2)] w-full lg:w-[420px] xl:w-[480px]">
+          <div className="rounded-[32px] overflow-hidden border-2 border-[hsl(var(--cyan)/0.3)] shadow-[0_0_60px_hsl(var(--cyan)/0.2)] w-full lg:w-[420px] xl:w-[480px] self-start lg:mt-[140px]">
             <img
               src={authorPhoto}
               alt="Николай Цалко"
