@@ -1,3 +1,5 @@
+import { FileText, Shield, Phone } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="border-t border-[hsl(var(--stroke))] bg-[hsl(var(--bg))]">
@@ -5,37 +7,44 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Юридическая информация */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">Юридическая информация</h3>
+            <h3 className="text-sm font-semibold text-cyan mb-4">Юридическая информация</h3>
             <div className="space-y-2 text-sm text-muted">
-              <p>ИП Салько Александр Игоревич</p>
-              <p>ИНН: 246322563532</p>
-              <p>ОГРНИП: 323246800062845</p>
+              <p>ИП Шагалина К.Э.</p>
+              <p>ИНН: <span className="text-cyan">501604427070</span></p>
             </div>
           </div>
 
           {/* Контакты */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">Контакты</h3>
+            <h3 className="text-sm font-semibold text-cyan mb-4">Контакты</h3>
             <div className="space-y-2 text-sm text-muted">
-              <p>Телефон: +7 (XXX) XXX-XX-XX</p>
-              <p>Email: info@rosfocus.ru</p>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-cyan" />
+                <span>+7 (963) 522-17-60</span>
+              </div>
             </div>
           </div>
 
           {/* Документы */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">Документы</h3>
-            <div className="space-y-2">
+            <h3 className="text-sm font-semibold text-cyan mb-4">Документы</h3>
+            <div className="space-y-3">
               <a 
-                href="#" 
-                className="block px-4 py-2 text-sm rounded-lg border border-[hsl(var(--stroke))] bg-[hsl(var(--bg-card))] text-foreground hover:border-cyan/50 transition-colors"
+                href="https://aitsalko.ru/page1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-lg border border-[hsl(var(--stroke))] bg-[hsl(var(--bg-card))] text-foreground hover:border-cyan/50 hover:bg-[hsl(var(--bg-card))]/80 transition-all"
               >
+                <FileText className="w-4 h-4" />
                 Публичная оферта
               </a>
               <a 
-                href="#" 
-                className="block px-4 py-2 text-sm rounded-lg border border-[hsl(var(--stroke))] bg-[hsl(var(--bg-card))] text-foreground hover:border-cyan/50 transition-colors"
+                href="https://aitsalko.ru/page0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-lg border border-[hsl(var(--stroke))] bg-[hsl(var(--bg-card))] text-foreground hover:border-cyan/50 hover:bg-[hsl(var(--bg-card))]/80 transition-all"
               >
+                <Shield className="w-4 h-4" />
                 Политика конфиденциальности
               </a>
             </div>
