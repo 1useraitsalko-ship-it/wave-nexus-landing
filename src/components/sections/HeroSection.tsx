@@ -12,17 +12,16 @@ const HeroSection = () => {
           <div className="space-y-8 animate-slide-up">
             <Badge>ВТОРАЯ ВОЛНА НЕЙРОКОНТЕНТА</Badge>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-foreground">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15] text-foreground">
               Научись создавать{" "}
               <span className="bg-gradient-text bg-clip-text text-transparent">
                 вирусные ролики
               </span>
-              <br />
-              за{" "}
+              {" "}за{" "}
               <span className="bg-gradient-text bg-clip-text text-transparent">
                 5 минут
               </span>
-              <br />с помощью{" "}
+              {" "}с помощью{" "}
               <span className="bg-gradient-text bg-clip-text text-transparent">
                 AI
               </span>
