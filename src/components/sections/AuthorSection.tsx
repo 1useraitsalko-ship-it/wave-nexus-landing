@@ -1,4 +1,5 @@
 import authorPhoto from "@/assets/author-photo.jpeg";
+import GlassCard from "../GlassCard";
 
 const stats = [
   { value: "1000+", label: "коммерческих видео реализовано" },
@@ -23,16 +24,32 @@ const AuthorSection = () => {
               </p>
             </div>
 
-            <div className="space-y-10">
+            <div className="space-y-6">
               {stats.map((stat, index) => (
-                <div key={index} className="space-y-1">
-                  <div className="text-5xl md:text-6xl font-bold">
-                    {stat.value}
+                <GlassCard 
+                  key={index} 
+                  className="p-6 relative overflow-hidden group hover:shadow-[0_0_50px_hsl(var(--cyan)/0.25)] transition-all duration-300"
+                >
+                  {/* Волновой фоновый эффект */}
+                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--cyan))] via-transparent to-[hsl(var(--blue))]" />
+                    <div className="absolute top-0 left-0 w-full h-full">
+                      <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M0,50 Q25,40 50,50 T100,50 L100,100 L0,100 Z" fill="hsl(var(--cyan)/0.1)" />
+                        <path d="M0,60 Q25,50 50,60 T100,60 L100,100 L0,100 Z" fill="hsl(var(--blue)/0.1)" />
+                      </svg>
+                    </div>
                   </div>
-                  <div className="text-base md:text-lg text-muted max-w-md">
-                    {stat.label}
+                  
+                  <div className="relative z-10 space-y-2">
+                    <div className="text-4xl md:text-5xl font-bold bg-gradient-text bg-clip-text text-transparent">
+                      {stat.value}
+                    </div>
+                    <div className="text-base md:text-lg text-muted max-w-md">
+                      {stat.label}
+                    </div>
                   </div>
-                </div>
+                </GlassCard>
               ))}
             </div>
           </div>
