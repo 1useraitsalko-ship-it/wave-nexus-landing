@@ -39,9 +39,38 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: none !important;
   }
 
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Кастомный курсор с логотипом */
+.custom-cursor {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  background-image: url('/src/assets/rosfocus-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 0 8px hsl(var(--cyan) / 0.6)) drop-shadow(0 0 16px hsl(var(--blue) / 0.4));
+  transition: transform 0.15s ease;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, hsl(var(--cyan) / 0.4), transparent);
+  border-radius: 50%;
+  filter: blur(4px);
 }
