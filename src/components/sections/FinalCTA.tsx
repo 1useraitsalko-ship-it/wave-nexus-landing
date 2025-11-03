@@ -22,7 +22,7 @@ const FinalCTA = () => {
           </PrimaryButton>
 
           <p className="text-lg text-muted">
-            Старт фокус-группы: <span className="text-foreground font-semibold">18 ноября в 19:00 МСК</span>
+            <span className="text-foreground font-semibold">Мы уже работаем в фокус-группе, а ты?</span>
           </p>
         </div>
       </div>
