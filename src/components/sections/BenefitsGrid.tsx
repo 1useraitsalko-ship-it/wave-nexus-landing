@@ -27,6 +27,12 @@ const BenefitsGrid = () => {
   return (
     <section className="py-20">
       <div className="max-w-[1240px] mx-auto px-6 md:px-8">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <span className="bg-gradient-text bg-clip-text text-transparent">
+            Зачем это нужно?
+          </span>
+        </h2>
+        
         <div className="grid md:grid-cols-2 gap-6">
           {benefits.map((benefit, index) => (
             <GlassCard 
