@@ -27,7 +27,14 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            <PrimaryButton href="#modules" className="text-lg h-16 px-9">
+            <PrimaryButton
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById("modules");
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="text-lg h-16 px-9"
+            >
               🌊 Поймать волну возможностей
             </PrimaryButton>
           </div>
